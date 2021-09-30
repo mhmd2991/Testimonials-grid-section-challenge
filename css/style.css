@@ -1,1 +1,183 @@
+/* Start Global Rules */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
 
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --moderateViolet: hsl(263, 55%, 52%);
+    --veryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --veryDarkBlackishBlue: hsl(219, 29%, 14%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --lightGray: hsl(0, 0%, 81%);
+    --lightGrayishBlue: hsl(210, 46%, 95%);
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+    background-color: var(--lightGrayishBlue);
+}
+
+p {
+    line-height: 1.6;
+}
+
+.container {
+    padding: 71px 25px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+
+.container .box {
+    padding: 25px 33px 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.container .box .quotation {
+    position: absolute;
+    top: 0;
+    right: 80px;
+}
+
+.container .box:nth-of-type(1) {
+    background-color: var(--moderateViolet);
+
+}
+
+.container .box:nth-of-type(1) h3,
+.container .box:nth-of-type(2) h3,
+.container .box:nth-of-type(4) h3 {
+    color: var(--whiteColor);
+}
+
+.container .box:nth-of-type(3) h3,
+.container .box:nth-of-type(5) h3 {
+    color: var(--veryDarkGrayishBlue);
+}
+
+.container .box:nth-of-type(1) span,
+.container .box:nth-of-type(2) span,
+.container .box:nth-of-type(3) span,
+.container .box:nth-of-type(4) span,
+.container .box:nth-of-type(5) span {
+    color: var(--lightGray);
+}
+
+.container .box:nth-of-type(2) {
+    background-color: var(--veryDarkGrayishBlue);
+}
+
+.container .box:nth-of-type(3) {
+    background-color: var(--whiteColor);
+}
+
+.container .box:nth-of-type(4) {
+    background-color: var(--veryDarkBlackishBlue);
+}
+
+.container .box:nth-of-type(5) {
+    background-color: var(--whiteColor);
+}
+
+.container .box .top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.container .box:nth-of-type(1) .top img {
+    border: 2px solid var(--lightGray);
+}
+
+.container .box .top img {
+    border-radius: 50%;
+    border: 2px solid var(--moderateViolet);
+}
+
+.container .box .top h3 {
+    margin-bottom: 7px;
+}
+
+.container .box .bottom p:nth-of-type(1) {
+    margin-bottom: 23px;
+}
+
+.container .box:nth-of-type(1) .bottom p:nth-of-type(1),
+.container .box:nth-of-type(2) .bottom p:nth-of-type(1),
+.container .box:nth-of-type(4) .bottom p:nth-of-type(1) {
+    color: var(--whiteColor);
+    font-size: 1.6em;
+}
+
+.container .box:nth-of-type(3) .bottom p:nth-of-type(1),
+.container .box:nth-of-type(5) .bottom p:nth-of-type(1) {
+    color: var(--veryDarkGrayishBlue);
+    font-size: 1.6em;
+}
+
+.container .box:nth-of-type(1) .bottom p:nth-of-type(2),
+.container .box:nth-of-type(2) .bottom p:nth-of-type(2),
+.container .box:nth-of-type(3) .bottom p:nth-of-type(2),
+.container .box:nth-of-type(4) .bottom p:nth-of-type(2),
+.container .box:nth-of-type(5) .bottom p:nth-of-type(2) {
+    color: var(--lightGray);
+}
+
+
+@media (min-width: 640px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(255px, 1fr));
+        grid-template-areas: "daniel daniel Jonathan Kira"
+            "Jeanette Patrick Patrick Kira";
+    }
+
+    .container .box:nth-of-type(1) {
+        grid-area: daniel;
+
+    }
+
+    .container .box:nth-of-type(2) {
+        grid-area: Jonathan;
+
+    }
+
+    .container .box:nth-of-type(3) {
+        grid-area: Jeanette;
+    }
+
+    .container .box:nth-of-type(4) {
+        grid-area: Patrick;
+    }
+
+    .container .box:nth-of-type(5) {
+        grid-area: Kira;
+    }
+}
